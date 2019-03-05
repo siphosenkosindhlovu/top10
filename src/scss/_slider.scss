@@ -1,0 +1,64 @@
+@keyframes progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+.slider-wrapper {
+  width: 100%;
+  position: relative;
+  height: 470px;
+  .slider {
+    padding: 0;
+    list-style-type: none;
+    li {
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      position: absolute;
+      display: none;
+      width: 100%;
+      left: 0;
+      top: 0;
+    }
+    li:first-child {
+      position: relative;
+      display: block;
+      float: left;
+    }
+    &_tabs {
+      position: absolute;
+      bottom: 30px;
+      right: 15px;
+      z-index: 3;
+      li {
+        float: left;
+        margin-right: 30px;
+        display: block;
+        width: 24px;
+        height: 24px;
+        background: transparent;
+        border: 1px solid $orange;
+        &.slider_here {
+          background: $orange;
+        }
+        a {
+          display: block;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+    &_progress {
+      position: absolute;
+      height: 10px;
+      width: 100%;
+      background-color: $orange;
+      transform-origin: left;
+      bottom: 15px;
+      z-index: 2;
+      border-radius: 0 0 5px 5px;
+    }
+  }
+}

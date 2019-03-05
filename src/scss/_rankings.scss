@@ -1,0 +1,58 @@
+.ranking {
+  border: 3px solid $orange;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #1f1f1f;
+  color: white;
+  transition: all 0.3s;
+  .ranking-list {
+    padding: 15px 30px;
+  }
+  .team {
+    margin-bottom: 20px;
+    width: 100%;
+    &-logo {
+      width: 40px;
+      max-height: 100%;
+      margin-left: 20px;
+    }
+    &-name {
+      margin-left: 20px;
+    }
+    &-rank {
+      float: right;
+      i {
+        vertical-align: bottom;
+      }
+      &.rank-up {
+        color: $success;
+      }
+      &.rank-down {
+        color: $danger;
+      }
+    }
+  }
+  &:hover {
+    border-color: transparent;
+  }
+  a {
+    color: white;
+  }
+  a:hover {
+    text-decoration: none !important;
+    color: white;
+  }
+  .img-card {
+    height: auto;
+    max-height: auto;
+    border-radius: 0;
+    > img {
+      max-width: auto;
+      max-height: auto;
+      width: 100%;
+    }
+    .floating-caption {
+      justify-content: space-around;
+    }
+  }
+}

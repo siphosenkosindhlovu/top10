@@ -1,0 +1,49 @@
+//Overwriting Bootstrap defaults
+$orange: #ff4500 !default;
+$primary: $orange !default;
+$body-color: #252525;
+@import "../../node_modules/bootstrap/scss/bootstrap";
+.btn-primary {
+  color: white !important;
+}
+
+$heading-text: "industry", sans-serif;
+$body-text: "basic-sans", sans-serif;
+
+.heading {
+  text-transform: uppercase;
+  font-family: $heading-text;
+  padding-left: 0.5em;
+  font-weight: 700;
+  color: $body-color;
+  border-left: 3px solid $primary;
+  display: flex;
+  justify-content: space-between;
+  small {
+    color: #a1a1a1;
+    font-size: 0.8em;
+    align-self: center;
+  }
+}
+
+.column-section {
+  margin-bottom: 2.5em;
+}
+
+hr {
+  border: 0;
+  clear: both;
+  display: block;
+  width: 96%;
+  background-color: $border-color;
+  height: 1px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+}

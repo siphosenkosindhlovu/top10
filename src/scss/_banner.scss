@@ -1,0 +1,17 @@
+.banner {
+  padding-top: 30px;
+
+  .banner-main-pane,
+  .banner-side-pane {
+    height: 485px;
+  }
+
+  .banner-side-pane {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+  &--alternate {
+    padding-top: 0;
+  }
+}

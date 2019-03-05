@@ -1,0 +1,13 @@
+@import "usz6ihj.scss";
+@import "custom";
+@import "navbar";
+@import "slider";
+@import "banner";
+@import "cards";
+@import "rankings";
+@import "newsletter";
+@import "footer";
+body {
+  font-family: $body-text;
+  color: $body-color;
+}

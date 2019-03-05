@@ -1,0 +1,100 @@
+.img-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  border-radius: 5px;
+  max-height: 144px;
+  background: rgb(0, 0, 0);
+
+  > img {
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%;
+    opacity: 0.4;
+    transition: all 0.3s;
+  }
+
+  &--banner {
+    max-height: 470px;
+    .floating-caption {
+      align-items: flex-start;
+      justify-content: center;
+      text-align: unset;
+      a i {
+        margin-left: 2em;
+      }
+    }
+  }
+
+  &--games {
+    max-height: 210px;
+  }
+
+  &--hover {
+    &:hover {
+      .floating-caption {
+        opacity: 0;
+      }
+      img {
+        opacity: 1;
+        transform: scale(1.2);
+      }
+    }
+  }
+}
+
+.floating-caption {
+  font-family: $heading-text;
+  position: absolute;
+  width: inherit;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  color: white;
+  text-align: center;
+  left: 0;
+  right: 0;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 20px;
+  transition: all 0.3s;
+}
+
+.article-card {
+  font-family: $heading-text;
+  margin: 1em auto;
+  .img-card {
+    max-height: 210px;
+    img {
+      opacity: 0.8;
+    }
+  }
+  .caption-container {
+    margin: 0.6em 0;
+    .caption {
+      color: $body-color;
+      font-size: 18px;
+    }
+    a:not(.caption) {
+      font-weight: 700;
+    }
+  }
+
+  .details {
+    display: flex;
+    justify-content: flex-start;
+    font-size: 0.9em;
+    margin-top: -0.4em;
+    .author {
+      margin-right: 0.5em;
+    }
+    .date {
+      color: $body-color;
+    }
+  }
+}
