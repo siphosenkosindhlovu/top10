@@ -1,9 +1,9 @@
 .banner {
-  padding-top: 30px;
+  padding-top: 0;
 
-  .banner-main-pane,
-  .banner-side-pane {
-    height: 485px;
+  .banner-main-pane {
+    height: auto;
+    max-height: 450px;
   }
 
   .banner-side-pane {
@@ -11,7 +11,13 @@
     justify-content: space-between;
     flex-direction: column;
   }
-  &--alternate {
-    padding-top: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .banner {
+    .banner-main-pane,
+    .banner-side-pane {
+      height: 354px;
+    }
   }
 }

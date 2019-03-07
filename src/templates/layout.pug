@@ -1,0 +1,72 @@
+doctype html
+html(lang="en-GB")
+  block link 
+    - var selected = "Latest"
+  - var menu = {'Latest': '/', 'Games': '/games.html', 'Teams': '/teams.html', 'Events': 'events.html', 'Rankings': 'rankings.html'}
+  body
+    block header
+      header.top-nav
+        .container
+          .row
+            nav.col-12.navbar.navbar-light.navbar-expand-lg.align-items-center
+              a.navbar-brand(href="#")
+                img.img-fluid(
+                  height="30px",
+                  src="../images/logo.png"
+                  )
+              button.navbar-toggler(
+                type="button",
+                data-toggle="collapse",
+                data-target="#top-nav",
+                aria-controls="top-nav",
+                aria-expanded="false",
+                aria-label="Toggle navigation"
+              )
+                span.navbar-toggler-icon
+              #top-nav.collapse.navbar-collapse.justify-content-between
+                .navbar-nav
+                  each val, key in menu
+                    if selected === key
+                      a.nav-item.nav-link.active(href="#")= key
+                    else
+                      a.nav-item.nav-link(href="#")= key
+                .nav.nav-pills.justify-content-end
+                  a.nav-item.nav-link.login(href="#") Login
+                  a.nav-item.nav-link.join.btn-primary(href="#") Join
+    
+    block content
+    
+    footer.footer
+      button.scroll-top.btn.btn-primary
+        i.fa.fa-chevron-up
+      .container
+        .row.footer-nav
+          nav.nav
+            a.nav-link(href="#") Latest
+            a.nav-link(href="#") Games
+            a.nav-link(href="#") Teams
+            a.nav-link(href="#") Events
+            a.nav-link(href="#") Rankings
+          nav.nav
+            a.nav-link(href="#") Login
+            a.nav-link(href="#") About
+            a.nav-link(href="#") Contact
+            a.nav-link(href="#") Volunteer
+            a.nav-link(href="#") Advertise
+        .row.footer-logo
+          nav.nav.social
+            a.nav-link(href="#")
+              i.fab.fa-twitter
+            a.nav-link(href="#")
+              i.fab.fa-instagram
+            a.nav-link(href="#")
+              i.fab.fa-facebook
+            a.nav-link(href="#")
+              i.fab.fa-linkedin
+            a.nav-link(href="#")
+              i.fab.fa-youtube
+            a.nav-link(href="#")
+              i.fab.fa-discord
+        .row.footer-nav 
+          p Copyright © Top10Esports.com
+      .footer-bg

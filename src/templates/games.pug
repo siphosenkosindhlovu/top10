@@ -1,0 +1,34 @@
+extends layout.pug
+block link
+  - var selected = 'Games'
+block content
+  section.jumbotron.jumbotron-fluid.banner
+    .container
+      .row
+        .col-12
+          h5.heading Featured
+      .row
+        .col-12.col-md-8
+          .banner-main-pane
+            a(href="#").img-card.img-card--no-overlay.img-card--banner.img-card--hover
+              img.img-fluid.rounded(src="../images/Rectangle 2 copy 4.png")
+              
+        .col-12.col-md-4
+          .banner-side-pane
+
+  main.container
+    section.row
+      .col-12
+        h5.heading Games
+        -var games = [{name: 'Overwatch',src: '../images/Layer 7.png'},{name: 'League of Legends',src: '../images/Layer 7 copy.png'},{name: 'PUBG',src: '../images/Rectangle 2 copy 9.png'},{name: 'HeartStone',src: '../images/Group 4 copy 2.png'},{name: 'Dota 2',src: '../images/Dota 2@2x.png'},{name: 'Clash Royale',src: '../images/Clash Royale@2x.png'},{name: 'Rocket League',src: '../images/Rocket League@2x.png'},{name: 'Counter Strike Global Offensive',src: '../images/CSGO@2x.png'},{name: 'Call Of Duty: Black Ops 3',src: '../images/COD@2x.png'},]
+      each val in games
+        .col-12.col-sm-6.col-lg-4
+          .game-card
+            a(href="#").img-card--hover
+              .img-card
+                img(src=val.src )
+              .caption-container
+                .caption #{val.name}
+        
+      
+

@@ -1,0 +1,42 @@
+extends layout.pug 
+
+block link
+  -var selected = 'Teams'
+
+block content
+  section.jumbotron.jumbotron-fluid.banner
+    .container
+      .row
+        .col-12
+          h5.heading Featured Teams
+      .row
+        .col-12.col-sm-6.col-lg-4
+          a(href="#")
+            .team-card.img-card--hover
+             .img-card
+               img(src="../images/FNATIC.png")
+        .col-12.col-sm-6.col-lg-4
+          a(href="#")
+            .team-card.img-card--hover
+              .img-card
+                img(src="../images/ASTALIS.png")
+        .col-12.col-sm-6.col-lg-4
+          a(href="#")
+            .team-card.img-card--hover
+              .img-card
+                img(src="../images/OG@2x.png")
+  main.container
+    section.row
+      .col-12
+        h5.heading Teams
+      -var teams = [{name:'FNATIC',src: 'FNATIC-B@2x.png',tags: '#FNATIC'},{name:'ASTRALIS',src: 'ASTRALIS-B@2x.png',tags: '#ASTRALIS'},{name:'OG',src: 'OG-B@2x.png',tags: '#OG'},{name:'SK TELECOM T1',src: 'SKT1-B@2x.png',tags: '#SKT1'},{name:'INVICTUS GAMIMG',src: 'IG-B@2x.png',tags: '#IG'},{name:'SAMSUNG GALAXY',src: 'sG-B@2x.png',tags: '#sG'}]
+      each team in teams
+        .col-12.col-sm-6.col-lg-4
+          .team-card
+              a(href="#")
+                .img-card
+                  .floating-caption
+                    img.img-fluid(src="../images/" + team.src)
+              .caption-container
+                a(href="#").caption= team.name
+                a(href="#")= team.tags

@@ -5,19 +5,21 @@
   overflow: hidden;
   position: relative;
   border-radius: 5px;
-  max-height: 144px;
+  height: 100px;
   background: rgb(0, 0, 0);
+  transition: all 0.3s;
 
   > img {
     flex-shrink: 0;
     min-width: 100%;
     min-height: 100%;
     opacity: 0.4;
-    transition: all 0.3s;
+    transition: inherit;
   }
 
   &--banner {
-    max-height: 470px;
+    height: 450px;
+    overflow: hidden;
     .floating-caption {
       align-items: flex-start;
       justify-content: center;
@@ -27,9 +29,10 @@
       }
     }
   }
-
-  &--games {
-    max-height: 210px;
+  &--no-overlay {
+    > img {
+      opacity: 1;
+    }
   }
 
   &--hover {
@@ -39,7 +42,7 @@
       }
       img {
         opacity: 1;
-        transform: scale(1.2);
+        transform: scale(1.1);
       }
     }
   }
@@ -55,23 +58,32 @@
   align-items: center;
   justify-content: center;
   padding: 15px;
-  color: white;
   text-align: center;
   left: 0;
   right: 0;
+  color: white;
   font-weight: 700;
   text-transform: uppercase;
   font-size: 20px;
   transition: all 0.3s;
+  a {
+    color: white;
+  }
 }
 
-.article-card {
+.article-card,
+.team-card,
+.game-card {
   font-family: $heading-text;
-  margin: 1em auto;
+  text-transform: uppercase;
+  margin-top: 0;
+  margin-bottom: 1em;
   .img-card {
-    max-height: 210px;
+    height: 210px;
+    background-color: $gray-300;
     img {
-      opacity: 0.8;
+      opacity: 1;
+      height: inherit;
     }
   }
   .caption-container {
@@ -79,6 +91,7 @@
     .caption {
       color: $body-color;
       font-size: 18px;
+      margin-right: 1em;
     }
     a:not(.caption) {
       font-weight: 700;
@@ -96,5 +109,22 @@
     .date {
       color: $body-color;
     }
+  }
+}
+
+.game-card,
+.team-card {
+  margin-bottom: 3em;
+}
+
+.team-card {
+  .img-card:hover {
+    background-color: $gray-200;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .img-card--banner {
+    height: 354px;
   }
 }

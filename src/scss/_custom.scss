@@ -19,9 +19,10 @@ $body-text: "basic-sans", sans-serif;
   border-left: 3px solid $primary;
   display: flex;
   justify-content: space-between;
+  margin: 1em auto;
   small {
     color: #a1a1a1;
-    font-size: 0.8em;
+    font-size: 0.67em;
     align-self: center;
   }
 }
@@ -46,4 +47,8 @@ h4,
 h5,
 h6 {
   font-weight: 700;
+}
+
+a:hover {
+  text-decoration: none;
 }

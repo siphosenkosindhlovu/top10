@@ -2,6 +2,7 @@ const path = require("path");
 const webpack = require("webpack");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CleanWebpackPlugin = require("clean-webpack-plugin");
 
 module.exports = {
   entry: "./src/index.js",
@@ -30,7 +31,15 @@ module.exports = {
       },
       {
         test: /\.(png)|(jpg)|(svg)|(jpeg)$/,
-        use: ["file-loader"]
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "[name].[ext]",
+              outputPath: "images"
+            }
+          }
+        ]
       },
       {
         test: /\.html$/,
@@ -42,11 +51,20 @@ module.exports = {
       },
       {
         test: /\.(otf)|(eot)|(woff)|(woff2)|(ttf)$/,
-        use: ["file-loader"]
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "[name].[ext]",
+              outputPath: "fonts"
+            }
+          }
+        ]
       }
     ]
   },
   plugins: [
+    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       filename: "index.html",
       template: "./src/templates/index.html",
@@ -57,8 +75,38 @@ module.exports = {
       inject: "body"
     }),
     new HtmlWebpackPlugin({
-      filename: "file.html",
-      template: "./src/templates/file.pug",
+      filename: "games.html",
+      template: "./src/templates/games.pug",
+      meta: {
+        charset: "utf-8",
+        viewport: "width=device-width, initial-scale=1, shrink-to-fit=no"
+      },
+      inject: "body"
+    }),
+    new HtmlWebpackPlugin({
+      filename: "teams.html",
+      template: "./src/templates/teams.pug",
+      title: "Teams",
+      meta: {
+        charset: "utf-8",
+        viewport: "width=device-width, initial-scale=1, shrink-to-fit=no"
+      },
+      inject: "body"
+    }),
+    new HtmlWebpackPlugin({
+      filename: "events.html",
+      template: "./src/templates/events.pug",
+      title: "Events",
+      meta: {
+        charset: "utf-8",
+        viewport: "width=device-width, initial-scale=1, shrink-to-fit=no"
+      },
+      inject: "body"
+    }),
+    new HtmlWebpackPlugin({
+      filename: "rankings.html",
+      template: "./src/templates/rankings.pug",
+      title: "Rankings",
       meta: {
         charset: "utf-8",
         viewport: "width=device-width, initial-scale=1, shrink-to-fit=no"
@@ -67,7 +115,8 @@ module.exports = {
     }),
     new MiniCssExtractPlugin({
       filename: "[name].css",
-      chunkfilename: "[id].css"
+      chunkfilename: "[id].css",
+      publicPath: "assets/css"
     }),
     new webpack.ProvidePlugin({
       $: "jquery",
