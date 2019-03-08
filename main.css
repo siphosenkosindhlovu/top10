@@ -7453,6 +7453,7 @@ a:hover {
   border-radius: 12px;
   overflow: hidden;
   background-color: #1f1f1f;
+  font-size: 0.8em;
   color: white;
   transition: all 0.3s; }
   .ranking .ranking-list {
@@ -7484,8 +7485,7 @@ a:hover {
   .ranking a:hover {
     text-decoration: none !important; }
   .ranking .img-card {
-    height: auto;
-    max-height: auto;
+    height: 150px;
     border-radius: 0; }
     .ranking .img-card > img {
       max-width: auto;
